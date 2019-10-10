@@ -1,1 +1,6 @@
 @import "~bulma/bulma.sass";
+
+#particle-bg canvas {
+  position: absolute;
+  height: 100vh;
+}
