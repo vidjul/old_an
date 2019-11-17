@@ -1,4 +1,20 @@
+$blue: #6fbedb;
+$lightblue: #c0ecec;
+$darkblue: #1f355d;
+
+$primary: $blue;
+
+@import url("https://fonts.googleapis.com/css?family=Kalam&display=swap");
 @import "~bulma/bulma.sass";
+
+i {
+  color: $primary;
+}
+
+.title {
+  font-family: "Kalam", cursive;
+  color: $darkblue;
+}
 
 #particle-bg canvas {
   position: absolute;

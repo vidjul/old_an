@@ -1,41 +1,26 @@
 import React from "react";
-import Particles from "react-particles-js";
 
 import { Link } from "gatsby";
 import Image from "../components/image";
 import SEO from "../components/seo";
 
 import "./style.scss";
+import ParticleHero from "../components/particleHero";
 
 const getBirthday = () => {
   return new Date().getFullYear() - new Date("06/04/1996").getFullYear();
 };
 
 const IndexPage = () => {
-  const particlesParams = {
-    particles: {
-      number: {
-        value: 160,
-      },
-    },
-  };
   return (
     <div>
       <SEO title="Home" />
-      <section className="hero is-success is-fullheight" id="particle-bg">
-        <Particles params={particlesParams} />
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <h1 className="title">Hi there!</h1>
-            <p>Vidushan CHOORIYAKUMARAN, Software Engineer.</p>
-          </div>
-        </div>
-      </section>
-      <section className="hero is-light is-fullheight" id="particle-bg">
-        <div className="hero-body">
+      <ParticleHero />
+      <section className="section">
+        <section className="section">
           <div className="container has-text-centered">
             <div className="columns">
-              <div className="column">
+              <div className="column is-6">
                 <h1 className="title">About me</h1>
                 <p>
                   I'm a {getBirthday()} years old software engineer based in
@@ -44,23 +29,35 @@ const IndexPage = () => {
                   .
                 </p>
               </div>
-              <div className="column">
-                <h1 className="title">Thanks for coming!</h1>
-                <p>
-                  I'm still working on this page. If you want to contact me,
-                  don't hesitate to drop me an email at{" "}
-                  <a href="mailto:vidush@n-c.dev">vidush@n-c.dev</a>. (Indeed, I
-                  also enjoy creating{" "}
-                  <a href="https://en.wikipedia.org/wiki/Domain_hack">
-                    domain hacks!)
-                  </a>
-                  )
-                </p>
+              <div className="column is-6">
+                <h1 className="title">Some links!</h1>
+                <div className="ul">
+                  <li>
+                    <a href="https://github.com/vidjul">Github</a>
+                  </li>
+                  <li>
+                    <a href="https://linkedin.com/in/c-vidushan">LinkedIn</a>
+                  </li>
+                </div>
               </div>
-              <br />
             </div>
           </div>
-        </div>
+        </section>
+        <section className="section">
+          <div className="container">
+            <h1 className="title">Thanks for coming!</h1>
+            <p>
+              I'm still working on this page. If you want to contact me, don't
+              hesitate to drop me an email at{" "}
+              <a href="mailto:vidush@n-c.dev">vidush@n-c.dev</a>. (Indeed, I
+              also enjoy creating{" "}
+              <a href="https://en.wikipedia.org/wiki/Domain_hack">
+                domain hacks!)
+              </a>
+              )
+            </p>
+          </div>
+        </section>
       </section>
     </div>
   );
