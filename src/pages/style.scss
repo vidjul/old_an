@@ -2,21 +2,47 @@ $blue: #6fbedb;
 $lightblue: #c0ecec;
 $darkblue: #1f355d;
 
-$primary: $blue;
+$bluenight: #333745;
+$ibisrose: #d55f8f;
+$snowymount: #eeebe8;
+$lilacash: #d5cccc;
 
-@import url("https://fonts.googleapis.com/css?family=Kalam&display=swap");
+$primary: $bluenight;
+$link: $ibisrose;
+
+:export {
+  dark: $bluenight;
+  light: $ibisrose;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Kalam|Roboto&display=swap");
 @import "~bulma/bulma.sass";
 
-i {
-  color: $primary;
+body {
+  background-color: $lilacash;
+  color: $bluenight;
+  font-family: "Roboto", sans-serif;
+  .hint {
+    font-style: italic;
+    color: $lilacash;
+    margin-left: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
 }
 
 .title {
   font-family: "Kalam", cursive;
-  color: $darkblue;
+  color: $ibisrose;
 }
 
 #particle-bg canvas {
   position: absolute;
   height: 100vh;
+}
+
+.extra-container {
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 5px 5px 15px rgba($ibisrose, 1);
 }

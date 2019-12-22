@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Particles from "react-particles-js";
+import HeroTitle from "./heroTitle";
 
 export default class ParticleHero extends Component {
   constructor(props) {
@@ -15,13 +16,13 @@ export default class ParticleHero extends Component {
           },
         },
         color: {
-          value: "#ffffff",
+          value: "#d55f8f",
         },
         shape: {
           type: "circle",
           stroke: {
             width: 0,
-            color: "#000000",
+            color: "#d55f8f",
           },
           polygon: {
             nb_sides: 5,
@@ -55,7 +56,7 @@ export default class ParticleHero extends Component {
         line_linked: {
           enable: true,
           distance: 150,
-          color: "#ffffff",
+          color: "#d55f8f",
           opacity: 0.4,
           width: 1,
         },
@@ -123,16 +124,7 @@ export default class ParticleHero extends Component {
         <Particles params={this.particlesParams} />
         <div className="hero-body">
           <div className="container">
-            <div className="columns is-centered">
-              <div className="column is-4">
-                <div className="card">
-                  <div className="card-content">
-                    <p className="title has-text-black">Hi there!</p>
-                    <p>Vidushan CHOORIYAKUMARAN, Software Engineer.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HeroTitle />
           </div>
         </div>
       </section>

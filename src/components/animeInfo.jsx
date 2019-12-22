@@ -4,10 +4,13 @@ import Typing from "react-typing-animation";
 export class AnimeInfo extends Component {
   render() {
     return (
-      <Typing onFinishedTyping={this.props.typingFinished}>
-        ..watching anime!
-        <Typing.Delay ms={3000} />
-        <Typing.Backspace count={17} />
+      <Typing
+        className="is-size-5"
+        onFinishedTyping={this.props.onFinished}
+        loop
+      >
+        ..watching anime
+        <Typing.Backspace count={16} />
       </Typing>
     );
   }

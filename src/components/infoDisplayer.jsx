@@ -1,39 +1,38 @@
 import React, { Component } from "react";
+import Typing from "react-typing-animation";
 
 import ChessInfo from "./chessInfo";
 import AnimeInfo from "./animeInfo";
 
 export class InfoDisplayer extends Component {
-  intervalId;
-  currentIndex = 0;
-
-  updateDisplayedInfo() {
-    if (this.currentIndex >= this.state.infos.length) {
-      this.currentIndex = 0;
-    }
-    this.setState({
-      currentInfo: this.state.infos[this.currentIndex],
-    });
-    this.currentIndex++;
-  }
-
   constructor(props) {
     super(props);
     this.state = {
-      infos: [
-        <ChessInfo typingFinished={this.updateDisplayedInfo.bind(this)} />,
-        <AnimeInfo typingFinished={this.updateDisplayedInfo.bind(this)} />,
-      ],
-      currentInfo: 0,
+      currentIndex: 0,
     };
+
+    this.updateDisplayedInfo = this.updateDisplayedInfo.bind(this);
+
+    this.infos = [
+      <ChessInfo onFinished={this.updateDisplayedInfo} />,
+      <AnimeInfo onFinished={this.updateDisplayedInfo} />,
+    ];
   }
 
-  componentDidMount() {
-    this.updateDisplayedInfo();
-  }
+  updateDisplayedInfo = () => {
+    const newState = {
+      currentIndex: this.state.currentIndex,
+    };
+    if (this.state.currentIndex === this.infos.length - 1) {
+      newState.currentIndex = 0;
+    } else {
+      newState.currentIndex++;
+    }
+    this.setState(newState);
+  };
 
   render() {
-    return <div className="is-size-5">{this.state.currentInfo}</div>;
+    return this.infos[this.state.currentIndex];
   }
 }
 

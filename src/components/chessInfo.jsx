@@ -23,15 +23,18 @@ export class ChessInfo extends Component {
   render() {
     if (this.state.elo) {
       return (
-        <Typing onFinishedTyping={this.props.typingFinished}>
+        <Typing
+          className="is-size-5"
+          onFinishedTyping={this.props.onFinished}
+          loop
+        >
           ..playing blitz chess on <a href="chess.com">Chess.com</a> (and my
           current ELO is {this.state.elo})
-          <Typing.Delay ms={3000} />
           <Typing.Backspace count={64} />
         </Typing>
       );
     }
-    return null;
+    return <span className="is-size-5">..</span>;
   }
 }
 
