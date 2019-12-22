@@ -1,5 +1,6 @@
 import React from "react";
 import Loadable from "react-loadable";
+import Carousel from "nuka-carousel";
 
 import { Link } from "gatsby";
 import Image from "../components/image";
@@ -7,7 +8,7 @@ import SEO from "../components/seo";
 
 import "./style.scss";
 import ParticleHero from "../components/particleHero";
-import InfoDisplayer from "../components/infoDisplayer";
+import Anime from "../components/Anime";
 
 const LoadableChess = Loadable({
   loader: () => import("../components/Chess"),
@@ -43,7 +44,10 @@ const IndexPage = () => {
           </p>
         </div>
       </section>
-      <LoadableChess />
+      <Carousel>
+        <LoadableChess />
+        <Anime />
+      </Carousel>
       <section className="section">
         <div className="container">
           <h1 className="title">Thanks for coming!</h1>
@@ -53,7 +57,7 @@ const IndexPage = () => {
             <a href="mailto:vidush@n-c.dev">vidush@n-c.dev</a>. (Indeed, I also
             enjoy creating{" "}
             <a href="https://en.wikipedia.org/wiki/Domain_hack">
-              domain hacks!)
+              domain hacks!
             </a>
             )
           </p>
