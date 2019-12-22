@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Particles from "react-particles-js";
 import HeroTitle from "./heroTitle";
 
+import styles from "../pages/style.scss";
+
 export default class ParticleHero extends Component {
   constructor(props) {
     super(props);
@@ -16,21 +18,16 @@ export default class ParticleHero extends Component {
           },
         },
         color: {
-          value: "#d55f8f",
+          value: styles.light,
         },
         shape: {
           type: "circle",
           stroke: {
             width: 0,
-            color: "#d55f8f",
+            color: styles.light,
           },
           polygon: {
             nb_sides: 5,
-          },
-          image: {
-            src: "img/github.svg",
-            width: 100,
-            height: 100,
           },
         },
         opacity: {
@@ -56,7 +53,7 @@ export default class ParticleHero extends Component {
         line_linked: {
           enable: true,
           distance: 150,
-          color: "#d55f8f",
+          color: styles.light,
           opacity: 0.4,
           width: 1,
         },

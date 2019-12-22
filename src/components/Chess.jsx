@@ -6,9 +6,9 @@ import styles from "../pages/style.scss";
 
 const calcWidth = () => {
   if (window.innerWidth >= 1024) {
-    return 730;
+    return 480;
   } else if (window.innerWidth >= 768) {
-    return 620;
+    return 320;
   } else if (window.innerWidth >= 408) {
     return 260;
   } else if (window.innerWidth >= 360) {
@@ -79,35 +79,37 @@ export class Chess extends Component {
   render() {
     return (
       <section className="section extra-container">
-        <div className="columns is-centered">
-          <div className="column">
-            <p className="is-size-5">
-              ..playing chess! <br />I play mostly blitz chess on{" "}
-              <a href="https://chess.com">Chess.com</a> and my current ELO is{" "}
-              <strong>{this.state.elo}</strong>.
-              <span className="hint">
-                (That value is retrieved from their API, I hope it's high enough
-                right now!)
-              </span>
-            </p>
-            <br />
-            <p className="is-size-5">
-              My favorite piece is the Knight. (♞) I hope one day it will have
-              its own emoji just like the pawn{" "}
-              <span role="img" aria-label="black pawn">
-                ♟️
-              </span>
-              !
-            </p>
-          </div>
-          <div className="column">
-            <ChessBoard
-              calcWidth={calcWidth}
-              lightSquareStyle={lightSquareStyle}
-              darkSquareStyle={darkSquareStyle}
-              boardStyle={boardStyle}
-              position={this.state.fen}
-            />
+        <div className="container">
+          <div className="columns is-centered">
+            <div className="column">
+              <p className="is-size-5">
+                ..playing chess! <br />I play mostly blitz chess on{" "}
+                <a href="https://chess.com">Chess.com</a> and my current ELO is{" "}
+                <strong>{this.state.elo}</strong>.
+                <span className="hint">
+                  (That value is retrieved from their API, I hope it's high
+                  enough right now!)
+                </span>
+              </p>
+              <br />
+              <p className="is-size-5">
+                My favorite piece is the Knight. (♞) I hope one day it will have
+                its own emoji just like the pawn{" "}
+                <span role="img" aria-label="black pawn">
+                  ♟️
+                </span>
+                !
+              </p>
+            </div>
+            <div className="column">
+              <ChessBoard
+                calcWidth={calcWidth}
+                lightSquareStyle={lightSquareStyle}
+                darkSquareStyle={darkSquareStyle}
+                boardStyle={boardStyle}
+                position={this.state.fen}
+              />
+            </div>
           </div>
         </div>
       </section>
