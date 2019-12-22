@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/style.scss"],"names":["module","exports"],"mappings":"8EACAA,EAAOC,QAAU,CAAC,KAAO,UAAU,MAAQ","file":"styles-8e8f91ab9dbf7e9bfa40.js","sourcesContent":["// extracted by mini-css-extract-plugin\nmodule.exports = {\"dark\":\"#333745\",\"light\":\"#05aec0\"};"],"sourceRoot":""}
