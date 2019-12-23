@@ -39,12 +39,15 @@ const IndexPage = () => {
           </p>{" "}
           <br />
           <p className="is-size-5">
-            When I'm not not in front of VSCode (a.k.a the best editor), one of
-            the things I like to do is...
+            When I'm not in front of VSCode (a.k.a the best editor), one of the
+            things I like to do is...
           </p>
         </div>
       </section>
-      <Carousel>
+      <Carousel
+        renderCenterLeftControls={false}
+        renderCenterRightControls={false}
+      >
         <LoadableChess />
         <Anime />
       </Carousel>

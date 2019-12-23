@@ -8,13 +8,9 @@ const calcWidth = () => {
   if (window.innerWidth >= 1024) {
     return 480;
   } else if (window.innerWidth >= 768) {
-    return 320;
-  } else if (window.innerWidth >= 408) {
-    return 260;
-  } else if (window.innerWidth >= 360) {
-    return 210;
+    return 360;
   } else {
-    return 180;
+    return 240;
   }
 };
 
@@ -94,11 +90,11 @@ export class Chess extends Component {
               <br />
               <p className="is-size-5">
                 My favorite piece is the Knight. (♞) I hope one day it will have
-                its own emoji just like the pawn{" "}
+                its own emoji just like the pawn (
                 <span role="img" aria-label="black pawn">
                   ♟️
                 </span>
-                !
+                ) !
               </p>
             </div>
             <div className="column">
