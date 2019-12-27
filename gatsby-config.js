@@ -12,13 +12,25 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog-md`,
         path: `${__dirname}/src/blog-md`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-bulma`,
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-emoji`,
+          `gatsby-remark-a11y-emoji`,
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,

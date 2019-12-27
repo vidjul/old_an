@@ -3,6 +3,7 @@ import Particles from "react-particles-js";
 import HeroTitle from "./heroTitle";
 
 import styles from "../pages/style.scss";
+import Navbar from "./Navbar";
 
 export default class ParticleHero extends Component {
   constructor(props) {

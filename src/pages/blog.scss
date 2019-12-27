@@ -1,0 +1,26 @@
+$bluenight: #333745;
+$canaryblue: #05aec0;
+$snowymount: #f3f9f9;
+$lilacash: #93a3b1;
+
+$primary: $bluenight;
+$secondary: $canaryblue;
+$info: $lilacash;
+$link: $secondary;
+
+$background: $snowymount;
+
+:export {
+  dark: $primary;
+  light: $secondary;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap");
+@import "~bulma/bulma.sass";
+
+.blog {
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 10px 5px 5px #dddddd;
+  margin-top: -200px;
+}

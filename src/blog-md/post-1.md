@@ -1,7 +1,16 @@
 ---
-path: "/blog/not-your-business"
-date: "2019-10-10"
-title: "Hello world!"
+path: "/blog/markdown"
+date: "2019-12-23"
+title: "Markdown!!"
+featuredImage: "../images/gatsby-astronaut.png"
 ---
 
-Small test. How did you manage to reach this page? :joy:
+## Title
+
+:poop:
+
+Test!
+
+```javascript
+console.log("Hello world!");
+```

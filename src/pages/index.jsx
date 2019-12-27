@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import Loadable from "react-loadable";
 import Carousel from "nuka-carousel";
 
 import { Link } from "gatsby";
 import Image from "../components/image";
 import SEO from "../components/seo";
+import { Helmet } from "react-helmet";
 
 import "./style.scss";
 import ParticleHero from "../components/particleHero";
+import Navbar from "../components/Navbar";
 import Anime from "../components/Anime";
 
 const LoadableChess = Loadable({
@@ -22,13 +24,18 @@ const getBirthday = () => {
 };
 
 const IndexPage = () => {
+  const aboutRef = useRef(null);
   return (
     <div>
+      <Helmet>
+        <html class="has-navbar-fixed-top"></html>
+      </Helmet>
       <SEO title="Home" />
+      <Navbar />
       <ParticleHero />
       <section className="section">
         <div className="container">
-          <h1 className="title">About me</h1>
+          <h1 className="title is-size-2">About me</h1>
           <p className="is-size-5">
             I'm a {getBirthday()} years old software engineer based in Paris. I
             love <i>Final Fantasy 7</i>, <i>Death Note</i> and{" "}
@@ -53,7 +60,7 @@ const IndexPage = () => {
       </Carousel>
       <section className="section">
         <div className="container">
-          <h1 className="title">Thanks for coming!</h1>
+          <h1 className="title is-size-2">Thanks for coming!</h1>
           <p className="is-size-5">
             I'm still working on this page. If you want to contact me, don't
             hesitate to drop me an email at{" "}
