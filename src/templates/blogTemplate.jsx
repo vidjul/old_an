@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 
 import Navbar from "../components/Navbar";
 import "../pages/blog.scss";
+import Helmet from "react-helmet";
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -13,19 +14,24 @@ export default function Template({
   const featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid;
   return (
     <React.Fragment>
+      <Helmet>
+        <title>{frontmatter.title}</title>
+      </Helmet>
       <Navbar />
-      <div className="hero is-primary has-background">
-        <Img
-          className="hero-background is-transparent"
-          fluid={featuredImgFluid}
-        />
+      <div className="hero is-medium has-background is-medium">
+        <Img className="hero-background" fluid={featuredImgFluid} />
       </div>
-      <div className="blog-bg section">
+      <div className="section">
         <div className="container">
-          <section className="section">
-            <div className="blog container">
-              <h1 className="title is-size-1">{frontmatter.title}</h1>
-              <h2 className="subtitle">{frontmatter.date}</h2>
+          <section className="blog section">
+            <div className="container">
+              <div className="blog-header has-text-centered">
+                <h1 className="title is-size-1 blog-heading">
+                  {frontmatter.title}
+                </h1>
+                <h2 className="subtitle">{frontmatter.date}</h2>
+              </div>
+              <hr />
               <div
                 className="blog-post-content"
                 dangerouslySetInnerHTML={{ __html: html }}

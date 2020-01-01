@@ -15,12 +15,34 @@ $background: $snowymount;
   light: $secondary;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Catamaran:100,400|Roboto&display=swap");
 @import "~bulma/bulma.sass";
 
 .blog {
   background-color: #fff;
   padding: 15px;
-  box-shadow: 10px 5px 5px #dddddd;
   margin-top: -200px;
+  &-header {
+    margin-bottom: 20px;
+  }
+  &-heading {
+    font-family: "Catamaran", sans-serif;
+    font-weight: 100;
+    font-size: 2em;
+    color: #dddddd;
+  }
+}
+
+.hero {
+  &.has-background {
+    position: relative;
+    overflow: hidden;
+  }
+  &-background {
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 70vh;
+  }
 }
