@@ -38,8 +38,6 @@ export class Chess extends Component {
     this.makeRandomMove = this.makeRandomMove.bind(this);
   }
 
-  timer = () => window.setTimeout(this.makeRandomMove, 1000);
-
   async componentDidMount() {
     const res = await fetch("https://api.chess.com/pub/player/vidjul/stats");
     const resBody = await res.json();
@@ -49,14 +47,17 @@ export class Chess extends Component {
       });
     }
     this.game = new Logic();
-    setTimeout(() => this.makeRandomMove(), 1000);
+    this.timer = () => setInterval(() => this.makeRandomMove(), 1000);
   }
 
   componentWillUnmount() {
-    window.clearTimeout(this.timer());
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
   }
 
   makeRandomMove() {
+    console.log("called");
     const possibleMoves = this.game.moves();
     if (
       this.game.game_over() === true ||
@@ -69,7 +70,6 @@ export class Chess extends Component {
 
     this.game.move(possibleMoves[randomIndex]);
     this.setState({ fen: this.game.fen() });
-    this.timer();
   }
 
   render() {
