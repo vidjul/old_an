@@ -2,9 +2,11 @@ module.exports = {
   siteMetadata: {
     title: `Vidushan CHOORIYAKUMARAN`,
     description: `About me.`,
-    author: `@vidushan_`,
+    siteUrl: `https://vidu.sh/`,
+    author: `Vidushan`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
