@@ -2,7 +2,24 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 
 export class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isActive: false,
+    };
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+  }
+
+  toggleNavbar() {
+    this.setState({
+      isActive: !this.state.isActive,
+    });
+  }
   render() {
+    let isActiveClass = "navbar-menu ";
+    if (this.state.isActive) {
+      isActiveClass += "is-active";
+    }
     return (
       <nav
         className="navbar is-fixed-top"
@@ -16,6 +33,7 @@ export class Navbar extends Component {
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarBasicExample"
+            onClick={this.toggleNavbar}
           >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -23,7 +41,7 @@ export class Navbar extends Component {
           </a>
         </div>
 
-        <div className="navbar-menu">
+        <div className={isActiveClass}>
           <div className="navbar-start">
             <Link to="/" className="navbar-item">
               Home

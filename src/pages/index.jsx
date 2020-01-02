@@ -52,8 +52,8 @@ const IndexPage = () => {
         </div>
       </section>
       <Carousel
-        renderCenterLeftControls={false}
-        renderCenterRightControls={false}
+        renderCenterLeftControls={null}
+        renderCenterRightControls={null}
       >
         <LoadableChess />
         <Anime />
