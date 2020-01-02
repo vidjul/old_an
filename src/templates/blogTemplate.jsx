@@ -5,6 +5,7 @@ import Img from "gatsby-image";
 import Navbar from "../components/Navbar";
 import "../pages/blog.scss";
 import Helmet from "react-helmet";
+import SEO from "../components/seo";
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -15,8 +16,9 @@ export default function Template({
   return (
     <React.Fragment>
       <Helmet>
-        <title>{frontmatter.title}</title>
+        <html className="has-navbar-fixed-top"></html>
       </Helmet>
+      <SEO title={frontmatter.title} />
       <Navbar />
       <div className="hero is-medium has-background is-medium">
         <Img className="hero-background" fluid={featuredImgFluid} />

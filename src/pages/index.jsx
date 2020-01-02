@@ -28,7 +28,7 @@ const IndexPage = () => {
   return (
     <div>
       <Helmet>
-        <html class="has-navbar-fixed-top"></html>
+        <html className="has-navbar-fixed-top"></html>
       </Helmet>
       <SEO title="Home" />
       <Navbar />
